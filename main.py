@@ -7,6 +7,7 @@ is_game_continued = True
 
 score = 0
 
+
 def compare_display(a_choice, b_choice, score):
   clear()
   print(art.logo)
@@ -16,15 +17,18 @@ def compare_display(a_choice, b_choice, score):
   print(art.vs)
   print(f"Against B: {b_choice['name']}, a {b_choice['description']}, from {b_choice['country']}")
 
+  
 def compare_followers(a_choice, b_choice):
   if a_choice['follower_count'] > b_choice['follower_count']:
     return 1
   else:
     return 0
 
+  
 def restart_display():
   choice = input("Who has more followers? Type 'A' or 'B': ").lower()
   return choice
+
 
 def options_details():
   a_random = randint(1, 50)
@@ -35,10 +39,12 @@ def options_details():
 
   return data[a_random-1], data[b_random-1]
 
+
 def answered_details(a_choice, b_choice):
   b_random = randint(1, 50)
   
   return a_choice, data[b_random-1]
+  
   
 while is_game_continued:
   if score == 0:
